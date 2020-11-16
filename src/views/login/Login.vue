@@ -16,7 +16,8 @@
     </a-form-item>
     <a-form-item :wrapper-col="wrapperCol">
       <a-button type="primary">
-        {{ $t('login') }}
+        {{ $t('login')  }}
+        <router-link to="/foo">Go to Foo</router-link>
       </a-button>
     </a-form-item>
   </a-form>
