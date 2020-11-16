@@ -1,20 +1,20 @@
 <template>
-  <a-form layout="horizontal">
+  <a-form id="box" layout="horizontal">
     <a-form-item
         :label="$t('username')"
-        :label-col="formItemLayout.labelCol"
-        :wrapper-col="formItemLayout.wrapperCol"
+        :label-col="labelCol"
+        :wrapper-col="wrapperCol"
     >
       <a-input :placeholder="$t('please_input_username')"/>
     </a-form-item>
     <a-form-item
         :label="$t('password')"
-        :label-col="formItemLayout.labelCol"
-        :wrapper-col="formItemLayout.wrapperCol"
+        :label-col="labelCol"
+        :wrapper-col="wrapperCol"
     >
       <a-input :placeholder="$t('please_input_password')"/>
     </a-form-item>
-    <a-form-item :wrapper-col="buttonItemLayout.wrapperCol">
+    <a-form-item :wrapper-col="wrapperCol">
       <a-button type="primary">
         {{ $t('login') }}
       </a-button>
@@ -28,35 +28,19 @@ export default {
   data() {
     return {
       formLayout: 'horizontal',
+      labelCol: {span: 4},
+      wrapperCol: {span: 14}
     };
   },
-  computed: {
-    formItemLayout() {
-      const {formLayout} = this;
-      return formLayout === 'horizontal'
-          ? {
-            labelCol: {span: 4},
-            wrapperCol: {span: 14},
-          }
-          : {};
-    },
-    buttonItemLayout() {
-      const {formLayout} = this;
-      return formLayout === 'horizontal'
-          ? {
-            wrapperCol: {span: 14, offset: 4},
-          }
-          : {};
-    },
-  },
-  methods: {
-    handleFormLayoutChange(e) {
-      this.formLayout = e.target.value;
-    },
-  },
+  computed: {},
+  methods: {},
 }
 </script>
 
 <style scoped>
+#box {
+  width: 400px;
+  margin: 0 auto;
 
+}
 </style>
